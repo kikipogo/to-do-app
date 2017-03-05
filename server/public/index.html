@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>To Do List</title>
+  <script src="vendors/jquery.js" charset="utf-8"></script>
+  <script src="scripts/client.js" charset="utf-8"></script>
+</head>
+<body>
+  <h1>To Do App</h1>
+  <form id="newTaskForm">
+    <input name="description" placeholder="description">
+    <!-- <input type='checkbox' name="status"> -->
+    <button type="submit" id="newTaskButton">Click here to add new task!</button>
+  </form>
+  <table>
+    <thead>
+      <tr>
+        <th>Description</th>
+        <th>Status</th>
+        <th>Delete</th>
+        <th>Save</th>
+      </tr>
+    </thead>
+    <tbody id="taskShelf">
+    </tbody>
+  </table>
+</body>
+</html>
