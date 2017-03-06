@@ -1,0 +1,48 @@
+body {
+	 padding: 50px;
+	 font-size: 19px;
+	 font-family: sans-serif;
+}
+
+table {
+    border-collapse: collapse;
+    min-width: 550px;
+}
+
+th {
+    height: 30px;
+    text-align: left;
+}
+
+.taskComplete {
+  color: red;
+  text-decoration: line-through;
+  font-style: italic;
+}
+
+.actions {
+width: 50px;
+}
+
+.taskStatus {
+  text-align: center;
+}
+
+.taskDescription {
+  width: 400px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+#taskHeader {
+  margin-bottom: 20px;
+}
+
+#taskHeader > h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+#description {
+  width: 400px;
+}

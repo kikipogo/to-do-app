@@ -5,25 +5,30 @@
   <title>To Do List</title>
   <script src="vendors/jquery.js" charset="utf-8"></script>
   <script src="scripts/client.js" charset="utf-8"></script>
+  <link rel="stylesheet" href="styles/reset.css">
+  <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
+  <section id="taskHeader">
   <h1>To Do App</h1>
   <form id="newTaskForm">
-    <input name="description" placeholder="description">
-    <!-- <input type='checkbox' name="status"> -->
+    <input id="description" name="description" placeholder="description">
     <button type="submit" id="newTaskButton">Click here to add new task!</button>
   </form>
+</section>
+<section id="taskBody">
   <table>
     <thead>
       <tr>
         <th>Description</th>
-        <th>Status</th>
-        <th>Delete</th>
-        <th>Save</th>
+        <th class="actions">Status</th>
+        <th class="actions">Delete</th>
+        <th class="actions">Save</th>
       </tr>
     </thead>
     <tbody id="taskShelf">
     </tbody>
   </table>
+</section>
 </body>
 </html>

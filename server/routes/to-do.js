@@ -37,17 +37,14 @@ router.get('/', function(req, res){
 });
 
 router.post('/new', function(req, res){
-  // This will be replaced with an INSERT statement to SQL
   var newTask = req.body;
-
   pool.connect(function(errorConnectingToDatabase, client, done){
     if(errorConnectingToDatabase) {
-      // There was an error connecting to the database
       console.log('Error connecting to database: ', errorConnectingToDatabase);
       res.sendStatus(500);
     } else {
       // We connected to the database!!!
-      // Now, we're gonna' git stuff!!!!!
+      // Now, we're gonna' get stuff!!!!!
       client.query('INSERT INTO tasks (description, status) VALUES ($1, $2);',
       [newTask.description, newTask.status],
       function(errorMakingQuery, result){
@@ -63,7 +60,7 @@ router.post('/new', function(req, res){
   });
 });
 
-// -> /delete/48
+// -> /delete/id
 router.delete('/delete/:id', function(req, res){
   var taskId = req.params.id;
   // DELETE FROM books WHERE id=44;
@@ -78,7 +75,7 @@ router.delete('/delete/:id', function(req, res){
       // We connected to the database!!!
       // Now, we're gonna' delete stuff!!!!!
       client.query('DELETE FROM tasks WHERE id=$1;', // This is the SQL query
-      [taskId], // This is the array of things that replaces the $1, $2, $3 in the query
+      [taskId], // This is the array of things that replaces the $1 in the query
       function(errorMakingQuery, result){ // This is the function that runs after the query takes place
         done();
         if(errorMakingQuery) {
@@ -93,11 +90,11 @@ router.delete('/delete/:id', function(req, res){
 }); // closing delete request
 
 
-// for update -> /save/48
+// for update -> /save/id
 router.put('/save/:id', function(req, res){
   var taskId = req.params.id;
   var taskObject = req.body;
-  // UPDATE books SET title='The Yodler' WHERE id=40;
+  // UPDATE tasks SET description=' ' WHERE id='';
   console.log('task of id to save: ', taskId);
   // Connecting to, and deleting row from the database
   pool.connect(function(errorConnectingToDatabase, client, done){
